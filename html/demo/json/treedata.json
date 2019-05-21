@@ -1,0 +1,387 @@
+{
+	"color":["#c23531", "#2f4554", "#61a0a8", "#d48265", "#91c7ae", "#749f83", "#ca8622", "#bda29a", "#6e7074", "#546570", "#c4ccd3"],
+	"A": {
+		"name": "图书馆A",
+		"children": [
+			{
+				"name": "历史",
+				"value": 1000,
+				"children": [
+					{
+						"name": "China",
+						"value": 500,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 200
+							}, {
+								"name": "publisher_2",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "American",
+						"value": 500,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "German",
+						"value": 0
+					}
+				]
+			}, {
+				"name": "人物",
+				"value": 1000,
+				"children": [
+					{
+						"name": "American",
+						"value": 200
+					}, {
+						"name": "China",
+						"value": 300
+					}, {
+						"name": "French",
+						"value": 500
+					}
+				]
+			}
+		]
+	},
+	"B": {
+		"name": "图书馆B",
+		"children": [
+			{
+				"name": "历史",
+				"value": 1000,
+				"children": [
+					{
+						"name": "China",
+						"value": 500,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 200
+							}, {
+								"name": "publisher_2",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "American",
+						"value": 500,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "German",
+						"value": 0
+					}
+				]
+			}, {
+				"name": "人物",
+				"value": 1000,
+				"children": [
+					{
+						"name": "American",
+						"value": 200,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "China",
+						"value": 300,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "French",
+						"value": 500,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}
+				]
+			}, {
+				"name": "语言",
+				"value": 500,
+				"children": [
+					{
+						"name": "American",
+						"value": 200,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "China",
+						"value": 300,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "French",
+						"value": 500,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}
+				]
+			}, {
+				"name": "科学",
+				"value": 500,
+				"children": [
+					{
+						"name": "American",
+						"value": 200,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}, {
+						"name": "China",
+						"value": 300,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55,
+								"children": [
+									{
+										"name": "2018/10/2",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}
+								]
+							}, {
+								"name": "publisher_2",
+								"value": 45,
+								"children": [
+									{
+										"name": "2018/10/2",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}
+								]
+							}, {
+								"name": "publisher_3",
+								"value": 100,
+								"children": [
+									{
+										"name": "2018/10/2",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}
+								]
+							}, {
+								"name": "publisher_4",
+								"value": 200,
+								"children": [
+									{
+										"name": "2018/10/2",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}
+								]
+							}, {
+								"name": "other publisher_1",
+								"value": 100,
+								"children": [
+									{
+										"name": "2018/10/2",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}, {
+										"name": "2018/10/4",
+										"value": 10
+									}
+								]
+							}
+						]
+					}, {
+						"name": "French",
+						"value": 500,
+						"children": [
+							{
+								"name": "publisher_1",
+								"value": 55
+							}, {
+								"name": "publisher_2",
+								"value": 45
+							}, {
+								"name": "publisher_3",
+								"value": 100
+							}, {
+								"name": "publisher_4",
+								"value": 200
+							}, {
+								"name": "other publisher_1",
+								"value": 100
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}
