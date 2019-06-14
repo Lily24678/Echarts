@@ -1,2 +1,5 @@
 # Echarts
-Echarts
+使用步骤：
+	1、首先引入echart.js文件
+	2、初始化echarts容器
+	3、设置option
