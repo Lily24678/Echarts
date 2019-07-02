@@ -3,3 +3,6 @@
 	1、首先引入echart.js文件
 	2、初始化echarts容器
 	3、设置option
+
+备注
+1、注释中 ? 表示非echarts的配置项，有或无不影响echarts展示

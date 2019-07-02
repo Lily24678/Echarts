@@ -1,62 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
 
 	<head>
 		<meta charset="UTF-8">
 		<title>折线</title>
-		<!-- 引入 echarts.js -->
-		<script src="echarts/dist/echarts.min.js"></script>
-		<style>
-			div{
-				float: left;
-				border: 1px solid green;
-				margin-left: 10px;
-				margin-top: 10px;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
 	</head>
 
-	<body>
-		<!-- -------------------------------------------ECharts 入门示例---------line------------------------------------------------------------------------------------>
-		<div id="main" style="width: 600px;height:400px;"></div>
-		<script>
-			// 基于准备好的dom，初始化 echarts 实例并绘制图表。
-			echarts.init(document.getElementById('main')).setOption({
-				backgroundColor: '#F0FFFF',
-				title: {
-					text: 'Line Chart'
-				},
-				tooltip: {},
-				legend: {
-					data: ['趋势']
-				},
-				toolbox: {
-					feature: {
-						dataView: {},
-						saveAsImage: {
-							pixelRatio: 2
-						},
-						restore: {}
-					}
-				},
-				xAxis: {},
-				yAxis: {},
-				series: [{
-					name: '趋势',
-					type: 'line',
-					smooth: true, //折线变平滑的曲线
-					data: [
-						[12, 5], //左x，右y.在该书写方式下xAxis{}，否则冲突
-						[24, 20],
-						[36, 36],
-						[48, 10],
-						[60, 10],
-						[72, 20]
-					]
-				}]
-			});
-		</script>
-		<!-- --------------------------------结束-----------ECharts 入门示例---------bar------------------------------------------------------------------------------------>
+	<body style="height: 100%;margin: 0;">
+		
+		<div id="main" style="width: calc(100%/3.2);height:calc(100%/3);"></div>
+		<div id="demo_1" style="width: calc(100%/3.2);height:calc(100%/3);"></div>
+		
+			
+		<!-- 引入 echarts.js -->
+		<script src="echarts/dist/echarts.min.js"></script>
+		
+		<script src="js/line.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 
 </html>
