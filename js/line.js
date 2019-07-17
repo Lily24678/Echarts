@@ -52,10 +52,12 @@ function setSeries(data) {
 			lineStyle: {
 				type: 'dashed',
 			},
+			symbolSize:0,
 			data: convertData_dashed(item[1]) //当只有一个轴为类目轴（axis.type 为 'category'）的时候，数据可以简化用一个一维数组表示。
 		}, {
 			type: 'line',
 			name: item[0],
+			symbolSize:0,
 			lineStyle: {
 				type: 'solid',
 			},
@@ -89,9 +91,9 @@ function convertData_solid(data) {
 }
 
 /*-------------line设置分割线---------------*/
-var dataA = [5, 10, 15, 35, 25, 30, 21];
-var dataB = [20, 11, 18, 30, 20, 25, 30];
-var dataC = [10, 15, 30, 25, 28, 15, 33];
+var dataA = [51, 10, 15, 65, 45, 80, 100];
+var dataB = [5, 87, 96, 45, 33, 55, 74];
+var dataC = [13, 25, 49, 37, 51, 66, 89];
 echarts.init(document.getElementById('demo_1')).setOption({
 	title: {
 		text: '虚实混搭',
@@ -109,13 +111,56 @@ echarts.init(document.getElementById('demo_1')).setOption({
 	},
 	xAxis: {
 		data: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+		boundaryGap:false,
 	},
 	yAxis: {
 		type: 'value',
 	},
+	dataZoom:[{
+		//disabled:true,//停止组件功能，不可拖拽缩放来显示数据
+		type:'inside',
+//		start :25,
+//		end:100,
+		startValue:'周三',//数据窗口范围的起始数值，覆盖start的设置
+		endValue:'周五',//覆盖end的设置
+		minSpan:35,//缩放 最小数据显示
+		maxSpan:65,//缩放 最大数据显示
+		moveOnMouseMove:'alt',
+	},{
+		type:'slider',
+		orient:'vertical',
+	},{
+		type:'slider',
+		dataBackground:{
+			lineStyle:{
+				color:'green',
+				width:2,
+			},
+			areaStyle:{
+				color:'red',
+			}			
+		},
+		orient:'horizontal',
+	}],
 	series: setSeries([
 		['A线', dataA],
 		['B线', dataB],
 		['C线', dataC]
 	])
+});
+
+
+
+
+
+
+
+/*------------案例2--------分割线----------------------*/
+var demo2Charts=echarts.init(document.getElementById("demo_2"));
+demo2Charts.setOption({
+	series:[{
+		type:'line',
+		name:'日常数据',
+		
+	}]
 });

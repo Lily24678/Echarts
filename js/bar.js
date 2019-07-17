@@ -18,7 +18,10 @@ var option = {
 	title: { //通用设置：
 		text: 'ECharts 入门示例'
 	},
-	tooltip: {}, //通用设置：鼠标悬停时会显示提示，默认提示内容有series.name、xAxis.data(bar/line)、series.data
+	tooltip: {//通用设置：鼠标悬停时会显示提示，默认提示内容有series.name、xAxis.data(bar/line)、series.data
+		trigger:'axis',
+		formatter:'{a0}<br/>{b0} : {c0}',
+	}, 
 	legend: { //通用设置：要配合series.name使用,单独存在不起作用
 		data: ['销量']
 	},
@@ -54,6 +57,12 @@ var option = {
 		color: ['#dd6b66', '#759aa0', '#e69d87', '#8dc1a9', '#ea7e53', '#eedd78', '#73a373', '#73b9bc', '#7289ab', '#91ca8c', '#f49f42'],
 		name: '销量',
 		type: 'bar',
+		data: [5, 20, 36, 10, 10, 20]
+	},{
+		// 此系列自己的调色盘。
+		color: ['#759aa0', '#e69d87', '#8dc1a9', '#ea7e53', '#eedd78', '#73a373', '#73b9bc', '#7289ab', '#91ca8c', '#f49f42'],
+		name: '销量',
+		type: 'line',
 		data: [5, 20, 36, 10, 10, 20]
 	}]
 };
@@ -247,9 +256,15 @@ echarts.init(document.getElementById("demo_1")).setOption({
 		text:'纵坐标-类目显示',
 		left:'center',
 		top:'20',
-		textStyle:{
-			fontSize:30,
-		},
+	},
+	tooltip: {
+		show:true,
+		trigger:'item',
+	},	
+	legend:{
+		left:'right',
+		top:'bottom',
+		orient:'vertical',
 	},
 	grid:{
 		containLabel:true,		
@@ -260,7 +275,7 @@ echarts.init(document.getElementById("demo_1")).setOption({
 	},
 	yAxis:{
 		type:'category',
-		data:['A','B'],
+		data:['上海','安徽','长安'],
 		axisLine:{
 			show:false,
 		},
@@ -271,10 +286,27 @@ echarts.init(document.getElementById("demo_1")).setOption({
 			fontSize:24,
 		},
 	},
-	series:{
-		name:'最值',
-		type:'bar',
-		data:[6, 8],
-		barWidth:'30%',
-	},
+	series:[
+		{
+			name:'1-3天以内',
+			type:'bar',
+			barWidth:'20%',
+			stack:'sum',//数据堆叠
+			data:[10,20,30],
+		},{
+			name:'3-5天以内',
+			type:'bar',
+			barWidth:'20%',
+			stack:'sum',//数据堆叠
+			data:[10,20,30],
+		},{
+			name:'5天以上',
+			type:'bar',
+			barWidth:'20%',
+			stack:'sum',//数据堆叠
+			data:[10,20,30],
+		}
+	]
 });
+
+

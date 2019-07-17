@@ -254,7 +254,7 @@ function convertData_effectScatter(data){
 	data.map(function(e){
         res.push({
             name: e.name,
-            value:  geoCoordMap[e.name].concat(e.value)
+            value: geoCoordMap[e.name].concat(e.value)
         });
 	});
 	return res;
@@ -281,7 +281,8 @@ var option = {
         textStyle: {
             color: '#fff'
         },
-        selectedMode: 'single'
+        selectedMode: 'single',
+        data:['北京','上海','广州'],
 	},
 	geo: {
 		map: "china",
@@ -369,16 +370,16 @@ funcA();
 //主动触发事件
 var timeInterval;
 function funcA(){
+	var currentIndex = 0;
+	var legendLen = option.legend.data.length;
 	var fromCityName=['北京','上海','广州'];
-	var index=0;
 	timeInterval=window.setInterval(function(){
 		migrate_map.dispatchAction({//
 			type: 'legendSelect',
 			// 图例名称
-			name: fromCityName[index]
+			name: fromCityName[currentIndex]
 		});	
-		index++;
-		if(index>2)index=0
+		currentIndex = (currentIndex + 1) % legendLen;
 	},10000);	
 }
 
