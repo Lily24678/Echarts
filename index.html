@@ -3,6 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>echarts 案例说明</title>
+		<style>
+			em{
+				color: Crimson;
+			}
+		</style>
 	</head>
 	<body>
 		<h1>1、<a href="bar.html" target="_blank">柱状图</a></h1>
@@ -24,11 +29,19 @@
 		
 		<h1>3、<a href="line.html" target="_blank">折线图</a></h1>
 		<ol>
-			<li><a href="line.html#main" target="_blank">常规</a></li>
-			<li><a href="line.html#demo_1">虚实线混搭</a></li>
+			<li><a href="line.html#main" target="_blank">图1：常规</a></li>
+			<li><a href="line.html#demo_1">图2：虚实线混搭</a></li>
 			<ul>
-				<li>dataZoom 组件 用于区域缩放</li>
+				<li>dataZoom 组件 用于区域缩放（图3）</li>
 			</ul>
+			<li><a href="line.html#demo_2">图3：动态xAxis</a></li>
+			<p>例如：近7天与近30天的数据切换</p>
+			<ul>
+				<li>dataset 数据集</li>
+				<li>dataZoom 组件 用于区域缩放</li>
+				<li>legend事件：主动触发legendselectchanged事件</li>
+			</ul>
+			<li><a href="line.html#demo_3">图4：轮播显示数据</a></li>
 		</ol>		
 		
 		<h1>4、<a href="funnel.html" target="_blank">漏斗图</a></h1>
@@ -48,6 +61,16 @@
 			<li><a href="pie.html#main" target="_blank">图1：常规</a></li>
 			<li><a href="pie.html#main1" target="_blank">图2：南丁格尔图</a></li>
 			<li><a href="pie.html#demo_1" target="_blank">图3：环形图</a></li>
+		</ol>
+		
+		<h1>8、<a href="gauge.html" target="_blank">仪表盘</a></h1>
+		<ol>
+			<li><a href="gauge.html#demo_1">图1：常规</a></li>
+			<li><a href="gauge.html#demo_2">图2：常规属性设置</a></li>
+			<li><a href="gauge.html#demo_3">图3：时钟</a></li>
+			<ul>
+				<li>animation true与false效果（<em>建议：动态图时使用animation: false</em>）</li>
+			</ul>
 		</ol>
 		
 		<h1>8、<a href="radar.html">雷达图</a></h1>

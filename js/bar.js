@@ -290,21 +290,42 @@ echarts.init(document.getElementById("demo_1")).setOption({
 		{
 			name:'1-3天以内',
 			type:'bar',
+	        itemStyle: {
+	            barBorderRadius:20
+	        },			
 			barWidth:'20%',
 			stack:'sum',//数据堆叠
 			data:[10,20,30],
+			z: 10,			
 		},{
 			name:'3-5天以内',
 			type:'bar',
+	        itemStyle: {
+	            barBorderRadius:20
+	        },			
 			barWidth:'20%',
 			stack:'sum',//数据堆叠
 			data:[10,20,30],
+			z: 10,	
 		},{
 			name:'5天以上',
 			type:'bar',
+	        itemStyle: {
+	            barBorderRadius:20
+	        },			
 			barWidth:'20%',
 			stack:'sum',//数据堆叠
 			data:[10,20,30],
+			z: 10,
+		},{
+	        type: 'bar',//灰色背景部分
+	        itemStyle: {
+                color: '#ddd'
+	        },
+	        silent: true,
+	       	barWidth:'20%',
+	        barGap: '-100%', // Make series be overlap
+	        data: [100, 100, 100]
 		}
 	]
 });

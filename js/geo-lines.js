@@ -366,7 +366,7 @@ if (option && typeof option === "object") {
 }
 addlisterer();
 funcA();
-/*-------------事件分割线------------------------------------*/
+/*-------------事件---分割线----------------------*/
 //主动触发事件
 var timeInterval;
 function funcA(){

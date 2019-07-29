@@ -156,11 +156,170 @@ echarts.init(document.getElementById('demo_1')).setOption({
 
 
 /*------------案例2--------分割线----------------------*/
+
+/*------------数据------------分割线-----------------*/
+var date = new Date();
+data = DataUtil.getValues(100);
+var xData=date.getPreDate_Arr(100,-1,1);
+
+/*------------echarts设置------分割线------------------*/
 var demo2Charts=echarts.init(document.getElementById("demo_2"));
 demo2Charts.setOption({
+	title:{
+		text:'动态xAxis',
+	},
+	legend:{
+		selectedMode:'single',
+	},
+	tooltip:{
+		trigger:'axis',
+	},
+	dataZoom:[{
+		type:'slider',
+		height:10,//组件高度
+		zoomLock:true,//只能平移，不能缩放
+	}],
+	dataset:{
+		source:{
+		 'product':xData,
+		 '7天':data.slice(data.length-7),
+		 '30天':data.slice(data.length-30),
+		 '100天':data,			
+		}
+	},
+	xAxis:{
+		type: 'category',
+		boundaryGap:true,
+		axisLabel:{
+			rotate:20,
+//			showMinLabel:false,
+//			showMaxLabel:false,
+		},
+	},
+		
+	yAxis:{},
 	series:[{
 		type:'line',
-		name:'日常数据',
-		
+	},{
+		type:'line',
+	},{
+		type:'line',
 	}]
 });
+
+/*-------------事件---分割线----------------------*/
+//监听事件
+demo2Charts.on('legendselectchanged',function(e){
+	var dataNum=parseInt(e.name.slice(0,e.name.length-1));
+	var option={
+		dataset:{
+			source:{
+			 'product':xData.slice(xData.length-dataNum),
+			}
+		},
+	};
+	
+	if(dataNum>=10&&dataNum<50){
+		option.dataZoom={
+			start:0,
+			end:30,			
+		};
+	}else if(dataNum>=50){
+		option.dataZoom={
+			start:0,
+			end:10,			
+		};		
+	}else{
+		option.dataZoom={
+			start:0,
+			end:100,			
+		};
+	}
+	
+	demo2Charts.setOption(option);
+});
+//主动触发事件
+demo2Charts.dispatchAction(
+	{
+		 type: 'legendToggleSelect',//主动触发legendselectchanged事件
+		 name:'7天',
+	}
+);
+
+
+
+
+
+
+
+
+/*------------案例3--------分割线----------------------*/
+
+/*------------数据---------分割线-------------------------*/
+var date=new Date();
+var baseXData=date.getPreDate_Arr(99,-1,0);
+var baseData=DataUtil.getValues(100);
+
+var data3=baseData.slice(0,7);
+var xData3=baseXData.slice(0,7);
+var index=data3.length;
+
+function addData() {
+	if (index==baseData.length){
+		data3=baseData.slice(0,7);
+		xData3=baseXData.slice(0,7);
+		index=data3.length;
+	}else{
+		//向数组尾部添加一个元素
+		data3.push(baseData[index]);
+		xData3.push(baseXData[index]);
+		//删除数组的第一个元素
+		data3.shift();
+		xData3.shift();		
+	}
+	index++;
+}
+var dd =setInterval(function () {
+    addData();
+    demo3Chart.setOption({
+        xAxis: {
+            data: xData3
+        },
+        series: [{
+            name:'成交',
+            data: data3
+        }]
+    });
+}, 1000);
+
+/*-------------echarts设置-------分割线---------------*/
+var demo3Chart = echarts.init(document.getElementById("demo_3"));
+demo3Chart.setOption({
+	title:{
+		text:'轮播显示数据',
+	},
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data:xData3,
+    },
+    yAxis: {
+        boundaryGap: [0, '50%'],
+        type: 'value'
+    },
+    series: [
+        {
+            name:'成交',
+            type:'line',
+            animation: false,
+            smooth:true,
+            symbol: 'none',
+            stack: 'a',
+            areaStyle: {
+                normal: {}
+            },
+            data:data3,
+        }
+    ]	
+});
+

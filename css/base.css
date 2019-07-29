@@ -1,5 +1,14 @@
+html,body{
+	height: 100%;
+}
 div{
 	float: left;
 	border: 1px solid green;
 	margin: 10px 10px 10px 10px;
 }
+div.class1{
+	width: calc(100%/3.2);
+	height:calc(100%/3);
+}
+
+
